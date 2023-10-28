@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, Outlet, useNavigate } from 'react-router-dom';
 import * as GetMovies from '../api-axios';
-import Cast from 'components/Cast';
+
 import {
   MovieDetailsContainer,
   BackButton,
