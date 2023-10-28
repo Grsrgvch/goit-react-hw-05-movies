@@ -24,7 +24,9 @@ const Cast = () => {
   return (
     <CastContainer>
       <CastList>
-        {casts &&
+        {casts.length === 0 ? (
+          <p>Not Cast</p>
+        ) : (
           casts.map(cast => (
             <CastItem key={cast.id}>
               {cast.profile_path ? (
@@ -37,7 +39,8 @@ const Cast = () => {
               )}
               <p>{cast.name}</p>
             </CastItem>
-          ))}
+          ))
+        )}
       </CastList>
     </CastContainer>
   );

@@ -51,6 +51,9 @@ export const OverviewText = styled.p`
   width: 700px;
   margin-top: 5px;
   text-align: center;
+
+  margin-inline-start: auto;
+  margin-inline-end: auto;
 `;
 
 export const GenresTitle = styled.h4`

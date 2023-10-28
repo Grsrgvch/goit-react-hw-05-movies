@@ -13,6 +13,12 @@ export const CastList = styled.ul`
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+  margin-block-end: 0px;
+  margin-block-start: 0px;
+  p {
+    margin: 0;
+    font-size: 25px;
+  }
 `;
 
 export const CastItem = styled.li`

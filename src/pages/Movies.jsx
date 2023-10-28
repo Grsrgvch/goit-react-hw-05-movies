@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import * as GetMovies from '../api-axios';
 import { useSearchParams } from 'react-router-dom';
+import toast from 'react-hot-toast';
+
 import {
   MoviesContainer,
   SearchTitle,
@@ -23,6 +25,10 @@ const Movies = () => {
   };
   const handleSubmit = evt => {
     evt.preventDefault();
+    if (inputQuery === '') {
+      return toast.error('Fill in the search bar');
+    }
+
     params.set('query', inputQuery);
     setParams(params);
   };
@@ -35,7 +41,7 @@ const Movies = () => {
       const {
         data: { results },
       } = await GetMovies.getMovies(query);
-      console.log(query);
+
       setArrMovies(results);
       try {
       } catch (error) {

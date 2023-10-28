@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 
 import { lazy } from 'react';
 
@@ -22,6 +23,7 @@ export const App = () => {
           </Route>
         </Route>
       </Routes>
+      <Toaster position="top-right" reverseOrder={false} />
     </div>
   );
 };

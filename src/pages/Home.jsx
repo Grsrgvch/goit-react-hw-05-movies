@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-
 import * as GetMovies from '../api-axios';
 import {
   HomeContainer,
@@ -31,6 +30,7 @@ const Home = () => {
   return (
     <HomeContainer>
       <TopMoviesTitle>Top Movies</TopMoviesTitle>
+
       <MovieList>
         {topMovies.map(topMovie => {
           return (

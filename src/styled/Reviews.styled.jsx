@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const ReviewsContainer = styled.div`
   background-color: #000;
   color: #fff;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
 `;
 
@@ -14,6 +14,12 @@ export const ReviewsList = styled.ul`
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  margin-block-end: 0px;
+  margin-block-start: 0px;
+  p {
+    margin: 0;
+    font-size: 25px;
+  }
 `;
 
 export const ReviewItem = styled.li`
