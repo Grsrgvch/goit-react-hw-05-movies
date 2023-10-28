@@ -18,7 +18,7 @@ import {
   AdditionalInfoLink,
   CastReviewsLink,
   OverviewText,
-} from '../styled/MovieDetails';
+} from '../styled/MovieDetails.styled';
 
 const MovieDetails = () => {
   const params = useParams();

@@ -16,9 +16,9 @@ export const BackButton = styled.button`
   border: none;
   padding: 10px 20px;
   cursor: pointer;
-  font-size: 8px;
+  font-size: 16px;
   position: absolute;
-  top: 50px;
+  top: 10px;
   left: 10px;
 `;
 
@@ -50,6 +50,7 @@ export const OverviewText = styled.p`
   font-size: 10px;
   width: 700px;
   margin-top: 5px;
+  text-align: center;
 `;
 
 export const GenresTitle = styled.h4`
@@ -89,11 +90,11 @@ export const AdditionalInfoItem = styled.li`
 export const AdditionalInfoLink = styled(Link)`
   color: #e50914;
   text-decoration: none;
-  font-size: 8px;
+  font-size: 12px;
 `;
 
 export const CastReviewsLink = styled(Link)`
   color: #e50914;
   text-decoration: none;
-  font - size: 8px;
+  font - size: 12px;
 `;
