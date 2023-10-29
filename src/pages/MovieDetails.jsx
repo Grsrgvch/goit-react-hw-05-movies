@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { useParams, Outlet, useNavigate } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import { useParams, Outlet, useLocation } from 'react-router-dom';
 import * as GetMovies from '../api-axios';
 
 import {
@@ -24,13 +24,12 @@ const MovieDetails = () => {
   const params = useParams();
   const [movie, setMovie] = useState();
   const [year, setYear] = useState();
-  const navigate = useNavigate();
+  const location = useLocation();
+  const beackLink = useRef(location?.state?.from);
+  console.log();
   const placeholderImageURL =
     'https://kartinki.pics/uploads/posts/2022-03/1646240334_2-kartinkin-net-p-kartinki-krasivaya-noch-2.jpg';
 
-  const goBack = () => {
-    navigate(-1);
-  };
   useEffect(() => {
     async function getMovie() {
       try {
@@ -51,7 +50,8 @@ const MovieDetails = () => {
     <MovieDetailsContainer>
       {movie && (
         <div>
-          <BackButton onClick={goBack}>Go back</BackButton>
+          <BackButton to={beackLink.current}>Go Beack</BackButton>
+
           {movie.poster_path ? (
             <MovieImage
               src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}

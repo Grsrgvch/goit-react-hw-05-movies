@@ -10,7 +10,7 @@ export const MovieDetailsContainer = styled.div`
   position: relative;
 `;
 
-export const BackButton = styled.button`
+export const BackButton = styled(Link)`
   background-color: #e50914;
   color: #fff;
   border: none;
@@ -20,6 +20,7 @@ export const BackButton = styled.button`
   position: absolute;
   top: 10px;
   left: 10px;
+  text-decoration: none;
 `;
 
 export const MovieImage = styled.img`

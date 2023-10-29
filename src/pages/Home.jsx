@@ -7,9 +7,10 @@ import {
   MovieLink,
   TopMoviesTitle,
 } from '../styled/Home.styled';
+import { useLocation } from 'react-router-dom';
 const Home = () => {
   const [topMovies, setTopMovies] = useState([]);
-
+  const location = useLocation();
   useEffect(() => {
     async function getTopMovies() {
       if (topMovies.length !== 0) {
@@ -35,7 +36,10 @@ const Home = () => {
         {topMovies.map(topMovie => {
           return (
             <MovieItem key={topMovie.id}>
-              <MovieLink to={`/movies/${topMovie.id}`}>
+              <MovieLink
+                to={`/movies/${topMovie.id}`}
+                state={{ from: location }}
+              >
                 <img
                   src={`https://image.tmdb.org/t/p/w500/${topMovie.poster_path}`}
                   alt=""

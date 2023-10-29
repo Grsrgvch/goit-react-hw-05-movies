@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import * as GetMovies from '../api-axios';
-import { useSearchParams } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
 import {
@@ -15,7 +15,7 @@ const Movies = () => {
   const [inputQuery, setInputQuery] = useState('');
 
   const [arrMovies, setArrMovies] = useState([]);
-
+  const location = useLocation();
   const [params, setParams] = useSearchParams();
   const query = params.get('query') ?? '';
   const placeholderImageURL =
@@ -62,7 +62,7 @@ const Movies = () => {
       <MovieList>
         {arrMovies.map(arrMovie => (
           <MovieItem key={arrMovie.id}>
-            <MovieLink to={`/movies/${arrMovie.id}`}>
+            <MovieLink to={`/movies/${arrMovie.id}`} state={{ from: location }}>
               {arrMovie.poster_path ? (
                 <img
                   src={`https://image.tmdb.org/t/p/w500/${arrMovie.poster_path}`}
